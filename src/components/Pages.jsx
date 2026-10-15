@@ -179,7 +179,37 @@ export function AboutPage() {
   return (
     <>
       <PageMeta title="About Sakshi Tiwari | Actor, Dancer & Movement Artist" description="Learn about Sakshi Tiwari's acting practice, Kathak and Abhinaya training, screen presence, choreography, and creative work in India." />
-      <About />
+      <section className="about-page-hero">
+        <div className="content-width">
+          <p className="eyebrow">ABOUT SAKSHI TIWARI</p>
+          <h1>Expressive grace,<br /><em>unfiltered screen presence.</em></h1>
+          <p>Actor, Kathak dancer, and movement artist working across screen performance, dance, and visual storytelling.</p>
+        </div>
+        <SectionDivider fill="#FFFFFF" />
+      </section>
+      <section className="about-profile section-pad">
+        <div className="content-width about-profile-grid">
+          <figure className="about-profile-art">
+            <img src="/grace-motion-expression-collage.png" alt="Grace, Motion and Expression collage featuring Sakshi Tiwari's acting, dance, and movement work" />
+            <figcaption>Acting / Kathak / Movement</figcaption>
+          </figure>
+          <div className="about-profile-copy">
+            <p className="eyebrow">THE PRACTICE</p>
+            <h2>Rooted in tradition.<br /><em>Ready for the frame.</em></h2>
+            <p>Sakshi brings classical movement and contemporary screen presence together through character-led performance, expressive choreography, and editorial work.</p>
+            <p>Her practice is grounded in Kathak and Abhinaya, with an eye for gesture, rhythm, and emotional detail. That foundation carries into film, OTT stories, camera movement, and brand storytelling.</p>
+            <div className="about-disciplines" aria-label="Creative disciplines">
+              <div><span>01</span><strong>Screen acting</strong></div>
+              <div><span>02</span><strong>Kathak & Abhinaya</strong></div>
+              <div><span>03</span><strong>Movement & brand stories</strong></div>
+            </div>
+            <div className="about-actions">
+              <Link to="/work" className="button button-dark">Explore selected work <ArrowRight /></Link>
+              <Link to="/contact" className="text-link">Discuss a project <ArrowUpRight /></Link>
+            </div>
+          </div>
+        </div>
+      </section>
       <Expertise />
       <CollaborationSection />
       <HomeContact />

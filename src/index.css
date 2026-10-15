@@ -115,9 +115,27 @@ body {
 .page-heading h1 { font-size: clamp(50px, 7vw, 84px); }
 .page-heading > p:last-child { max-width: 560px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.8; }
 .about-layout { display: grid; grid-template-columns: minmax(280px, .85fr) minmax(0, 1.15fr); align-items: center; gap: clamp(48px, 8vw, 110px); }
-.about-photo { height: 620px; overflow: hidden; background: var(--paper-deep); }
 .about-collage { width: min(100%, 460px); }
 .about-collage img { display: block; width: 100%; height: auto; }
+.about-watermark { position: absolute; top: -46px; left: 0; z-index: -1; color: rgb(251 232 229 / 78%); font: 700 76px/.9 'Cormorant Garamond', Georgia, serif; pointer-events: none; white-space: nowrap; }
+.about-page-hero { position: relative; overflow: hidden; padding: 78px 0 104px; background: var(--paper); }
+.about-page-hero .content-width { position: relative; z-index: 1; }
+.about-page-hero h1 { max-width: 900px; margin: 14px 0 18px; color: var(--ink); font: 500 clamp(44px, 5vw, 66px)/1.02 'Cormorant Garamond', Georgia, serif; }
+.about-page-hero h1 em { color: var(--rose); font-weight: 500; }
+.about-page-hero p:last-child { max-width: 600px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.8; }
+.about-profile { position: relative; background: white; }
+.about-profile-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: center; gap: clamp(44px, 7vw, 96px); }
+.about-profile-art { width: min(100%, 440px); margin: 0 auto; }
+.about-profile-art img { display: block; width: 100%; height: auto; }
+.about-profile-art figcaption { padding-top: 12px; color: var(--muted); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+.about-profile-copy h2 { margin: 12px 0 20px; color: var(--ink); font: 500 clamp(38px, 4.3vw, 58px)/1.02 'Cormorant Garamond', Georgia, serif; }
+.about-profile-copy h2 em { color: var(--rose); font-weight: 500; }
+.about-profile-copy > p:not(.eyebrow) { max-width: 580px; color: var(--muted); font-size: 14px; line-height: 1.85; }
+.about-disciplines { max-width: 560px; margin-top: 8px; border-top: 1px solid var(--line); }
+.about-disciplines div { display: flex; align-items: baseline; gap: 18px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.about-disciplines span { color: var(--rose); font-size: 10px; font-weight: 700; letter-spacing: .08em; }
+.about-disciplines strong { color: var(--ink); font: 500 19px 'Cormorant Garamond', Georgia, serif; }
+.about-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 24px; padding-top: 4px; }
 .about-copy h1 { font-size: clamp(44px, 5vw, 66px); }
 .about-copy h2 { margin-top: 34px; font-size: 34px; }
 .discipline-list { display: flex; flex-wrap: wrap; gap: 10px; margin: 26px 0 30px; }
@@ -231,6 +249,7 @@ body {
   .hero-section { grid-template-columns: minmax(0, .92fr) minmax(340px, 1.08fr); }
   .hero-photo { min-height: 560px; }
   .about-layout { gap: 48px; }
+  .about-profile-grid { gap: 40px; }
   .collaboration-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .site-nav { gap: 18px; }
 }
@@ -257,6 +276,12 @@ body {
   .hero-index { display: none; }
   .intro-strip { flex-wrap: wrap; gap: 12px 18px; min-height: 76px; font-size: 9px; }
   .home-intro, .about-layout, .media-content, .contact-layout { grid-template-columns: 1fr; gap: 34px; }
+  .about-page-hero { padding: 58px 0 80px; }
+  .about-page-hero h1 { font-size: clamp(30px, 8.5vw, 40px); }
+  .about-page-hero p:last-child { font-size: 14px; }
+  .about-profile-grid { grid-template-columns: 1fr; gap: 30px; }
+  .about-profile-art { width: min(100%, 380px); }
+  .about-profile-copy h2 { font-size: clamp(38px, 9vw, 46px); }
   .collaboration-heading, .story-layout, .faq-layout { grid-template-columns: 1fr; gap: 26px; }
   .story-feature-image { width: min(100%, 420px); height: auto; }
   .home-contact-sprig { right: 4%; top: 11%; width: 65px; opacity: .65; }
@@ -275,9 +300,14 @@ body {
   .home-cta h2 { font-size: 46px; }
   .page-heading { margin-bottom: 34px; }
   .page-heading h1, .media-hero h1 { font-size: clamp(50px, 14vw, 72px); }
-  .about-photo { order: 2; height: 112vw; max-height: 540px; }
   .about-collage { width: min(100%, 420px); }
-  .about-copy { order: 1; }
+  .about-page-section { padding-top: 60px; }
+  .about-page-title { margin: 14px 0 16px; font-size: clamp(42px, 11vw, 58px); }
+  .about-lead { font-size: 18px; }
+  .about-body { font-size: 13px; }
+  .about-watermark { top: -30px; font-size: 54px; }
+  .about-actions { align-items: stretch; flex-direction: column; }
+  .about-actions .button, .about-actions .text-link { width: fit-content; }
   .media-hero { padding: 76px 0 68px; }
   .media-block + .media-block { padding: 32px 0 0; border-top: 1px solid var(--line); border-left: 0; }
   .collaboration-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
